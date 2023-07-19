@@ -10,10 +10,10 @@ radius = 97.0206
 script = ExtResource("1_7fpdl")
 
 [node name="Star" type="Sprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.15, 0.15)
 texture = ExtResource("1_limip")
 offset = Vector2(3, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.15, 0.15)
 shape = SubResource("CircleShape2D_sf5yv")

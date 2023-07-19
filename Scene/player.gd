@@ -16,11 +16,12 @@ var player_state
 var offset = Vector2(0, 10.0)
 
 func _ready():
+	velocity.x = 250.0
 	player_state = State.IDLE
 	screenWidth = get_viewport_rect().size.x
 	screenHeight = get_viewport_rect().size.y
 	moveDistance = screenHeight/2
-	startPosition = Vector2((screenWidth/4)*3, (screenHeight/4)*3) # Changed from screenHeight
+	startPosition = Vector2(screenWidth/4, (screenHeight/4)*3) # Changed from screenHeight
 	targetPosition = Vector2(screenWidth/4, screenHeight/4) # Changed from screenHeight
 
 func _input(event):
@@ -35,17 +36,21 @@ func toggle_movement():
 	targetPosition = temp
 	
 func _physics_process(delta):
-	
+	if velocity.x < 450.00:
+		velocity.x += delta
+	print(velocity)
 	if (player_state == State.IDLE):
-		rotation = 0
+		rotation += rotationSpeed * delta
 		moveDistance=screenHeight/2
 		
 	if (player_state == State.MOVE):
 		position-=offset
-		moveDistance-=abs(offset.y)*1.1
-		var angle = atan2(velocity.y, velocity.x)
-		rotation += rotationSpeed * delta
+		moveDistance-=abs(offset.y)*1.15
 		
 	if((moveDistance)<=0):
-		print("stopped")
 		player_state = State.IDLE
+		
+	move_and_slide()
+
+func _game_over():
+	queue_free()

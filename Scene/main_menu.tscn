@@ -1,0 +1,75 @@
+[gd_scene load_steps=9 format=3 uid="uid://syrq2bq1yc0w"]
+
+[ext_resource type="Texture2D" uid="uid://cvkw7nw14yaeh" path="res://Assets/Background.png" id="1_11kmp"]
+[ext_resource type="Script" path="res://Scene/main_menu.gd" id="1_iu27d"]
+[ext_resource type="FontFile" uid="uid://by2i0qkid5b0t" path="res://Assets/Fonts/LexendGiga-Black.ttf" id="3_pmabv"]
+[ext_resource type="Texture2D" uid="uid://do8ytki67lran" path="res://Assets/UI/Highscore.png" id="4_knu38"]
+[ext_resource type="Texture2D" uid="uid://jf6f4k3guptu" path="res://Assets/UI/Play.png" id="5_0tarp"]
+[ext_resource type="Texture2D" uid="uid://dp146dj514y67" path="res://Assets/UI/Exit.png" id="6_7hjt8"]
+[ext_resource type="Texture2D" uid="uid://do7qndi1rk87l" path="res://Assets/star.png" id="7_4pept"]
+[ext_resource type="Script" path="res://Scene/UI_Star.gd" id="8_uddbv"]
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iu27d")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(401, 187)
+scale = Vector2(8.5, 3.98)
+texture = ExtResource("1_11kmp")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -202.5
+offset_top = 26.0
+offset_right = 202.5
+offset_bottom = 89.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_pmabv")
+theme_override_font_sizes/font_size = 48
+text = "STAR DODGE"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Scores" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("4_knu38")
+
+[node name="Play" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_0tarp")
+
+[node name="Exit" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("6_7hjt8")
+
+[node name="Star" type="Sprite2D" parent="."]
+position = Vector2(400, 300)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_4pept")
+script = ExtResource("8_uddbv")
+
+[connection signal="button_up" from="HBoxContainer/Play" to="." method="_on_play_button_up"]
+[connection signal="button_up" from="HBoxContainer/Exit" to="." method="_on_exit_button_up"]
