@@ -1,6 +1,8 @@
 # Star Dodge - Dynamic Level Generation
 
+Click to watch the gameplay video
 [![Watch the gameplay video](https://img.youtube.com/vi/wVo9m_KsGlc/maxresdefault.jpg)](https://www.youtube.com/watch?v=wVo9m_KsGlc)
+
 
 ## Introduction
 
