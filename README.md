@@ -43,4 +43,4 @@ The true beauty of dynamic level generation lies in the element of surprise. No 
 
 ## Conclusion
 
-Star Dodge's dynamic level generation elevates the game beyond conventional endless arcade experiences. With the power of procedural generation, we create an ever-changing world of obstacles and challenges for players to conquer. Embrace the unpredictability, test your reflexes, and embark on an infinite journey through the cosmos in Star Dodge!
+Star Dodge's power of procedural generation, we create an ever-changing world of obstacles and challenges for players to conquer. Embrace the unpredictability, test your reflexes, and embark on an infinite journey!
